@@ -17,9 +17,9 @@ def whichBroker = project.properties['broker']?:'ActiveMQ'
 
 dependencies {
     implementation 'com.lightstreamer:ls-jms-javase-client:1.0.0-alpha-02'
-    //implementation 'ch.qos.logback:logback-classic:1.2.0'
+    runtime 'org.slf4j:slf4j-simple:1.7.28'
     implementation 'com.beust:jcommander:1.78'
-    
+
     switch (whichBroker) {
         case "ActiveMQ":
             runtimeOnly 'org.apache.activemq:activemq-client:5.15.12'
@@ -31,12 +31,12 @@ dependencies {
             break;
 
         case "TIBCO":
-            runtimeOnly files('local_libs/tibjms.jar') 
+            runtimeOnly files('local_libs/tibjms.jar')
             break;
 
         case "IBM_MQ":
             runtimeOnly 'com.ibm.mq:com.ibm.mq.allclient:9.1.3.0'
-            runtimeOnly files('local_libs/fscontext.jar','local_libs/providerutil.jar') 
+            runtimeOnly files('local_libs/fscontext.jar','local_libs/providerutil.jar')
             break;
 
         case "WebLogic":
@@ -54,12 +54,12 @@ dependencies {
 
         where:
             JMS_BROKER
-                is a generic string that identifies the broker for which this build is targeted. 
+                is a generic string that identifies the broker for which this build is targeted.
             DEP_X
                 is the reference to the JMS broker-specific java library. If the library is not available
                 on JCenter, please copy it under the "local_libs" folder, as already done with TIBCO.
         */
-        
+
         default:
             println "No broker definition"
     }
