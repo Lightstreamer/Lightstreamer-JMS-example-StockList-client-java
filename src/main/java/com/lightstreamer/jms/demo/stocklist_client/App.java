@@ -5,7 +5,6 @@ import com.beust.jcommander.Parameter;
 import com.lightstreamer.jms.LSConnectionFactory;
 import com.lightstreamer.jms.LSSession;
 import com.lightstreamer.jms.demo.stocklist_service.message.FeedMessage;
-
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.MessageConsumer;
@@ -55,7 +54,7 @@ public class App {
 
   public void run() {
     try {
-      System.out.println("Connecting...");
+      System.out.printf("Connecting to %s using connector %s ...%n%n", server, connector);
 
       // Create the connection
       ConnectionFactory factory = new LSConnectionFactory(server, connector);
