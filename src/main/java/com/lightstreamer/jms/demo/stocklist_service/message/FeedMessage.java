@@ -18,9 +18,7 @@ package com.lightstreamer.jms.demo.stocklist_service.message;
 import java.io.Serializable;
 import java.util.Map;
 
-/**
- * A message published by StockList service and received from client.
- */
+/** A message published by StockList service and received from client. */
 public class FeedMessage implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -31,8 +29,7 @@ public class FeedMessage implements Serializable {
   // An HashMap containing the updates for the item (the field names are the keys)
   public Map<String, String> currentValues;
 
-  public FeedMessage() {
-  }
+  public FeedMessage() {}
 
   public FeedMessage(String itemName, final Map<String, String> currentValues) {
     this.itemName = itemName;
