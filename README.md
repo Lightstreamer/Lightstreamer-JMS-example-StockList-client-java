@@ -2,7 +2,7 @@
 
 <!-- START DESCRIPTION lightstreamer-jms-example-stocklist-client-java -->
 
-This project includes a demo client showing integration between **Lightstreamer JMS Extender JavaScript Client Library** and the **Node.js** platform.
+This project contains a sample Java application that shows how the **Lightstreamer JMS Extender JavaScript Client Library** can be used to connect to Lightstreamer JMS Extender.
 
 ![Screenshot](screen_large.png)<br>
 
@@ -50,11 +50,10 @@ You can also address any JMS Extender instance by specifying proper values for `
 ### Related Projects
 
 * [Lightstreamer JMS Extender - Basic Stock-List Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-JMS-example-StockList-client-javascript)
-* [Lightstreamer JMS Extender - Basic Chat Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-JMS-example-Chat-client-javascript)
-* [Lightstreamer JMS Extender - Basic Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-JMS-example-Portfolio-client-javascript)
+* [Lightstreamer JMS Extender - Basic Stock-List Demo - Node.js Client](https://github.com/Lightstreamer/Lightstreamer-JMS-example-StockList-client-node)
 * [Lightstreamer - Stock-List Demos - HTML Clients](https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-javascript)
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Client Library since version 2.0.0 or newer.
+* Compatible with Lightstreamer JMS Extender Java Client Library since version 2.0.0 or newer.
 * Compatible with Lightstreamer JMS Extender since version 2.0.0 or newer.
