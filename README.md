@@ -16,14 +16,13 @@ Check out the sources for further explanations.
 
 ## Build
 
-If you want to build and install a version of this demo pointing to your local Lightstreamer JMS Extender, follow these steps.
-In particular, this readme file details the steps required to execute the demo calling the node executable from the command line.
+If you want to build and install a version of this demo pointing to your local Lightstreamer JMS Extender, follow these steps:
 
 * Note that, as prerequisite, the [Lightstreamer JMS Extender - Stock-List Demo - Java (JMS) Service](https://github.com/Lightstreamer/Lightstreamer-JMS-example-StockList-service-java) has to be deployed on your local Lightstreamer JMS Extender instance. Please check out that project and follow the installation instructions provided with it.
 
 * Launch Lightstreamer JMS Extender.
 
-* Run the `Gradle` as follows:
+* Run `Gradle` as follows:
 
   ```sh
   $ ./gradlew installDist
