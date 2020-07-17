@@ -2,7 +2,7 @@
 
 <!-- START DESCRIPTION lightstreamer-jms-example-stocklist-client-java -->
 
-This project contains a sample Java application that shows how the [Lightstreamer JMS Extender Java Client Library](https://github.com/Lightstreamer/JMSExtender-lib-client-java) can be used to connect to Lightstreamer JMS Extender.
+This project contains a sample Java console application that shows how the [Lightstreamer JMS Extender Java Client Library](https://github.com/Lightstreamer/JMSExtender-lib-client-java) can be used to connect to Lightstreamer JMS Extender.
 
 ![Screenshot](screen_large.png)
 
