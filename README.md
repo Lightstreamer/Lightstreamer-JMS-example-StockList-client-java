@@ -25,8 +25,8 @@ If you want to build and install a version of this demo pointing to your local L
   ```sh
   $ ./gradlew installDist
   ```
-The `installDist` task will create a distribution of the project under the `build/install/stocklist-client-java` folder, from which you can start the client.
 
+The `installDist` task will create a distribution of the project under the `build/install/stocklist-client-java` folder, from which you can start the client.
 
 ## Start the Client
 
@@ -35,6 +35,7 @@ From `build/install/stocklist-client-java`, launch:
 ```sh
  $ ./bin/stocklist-client-java --server http://localhost:8080 --connector ActiveMQ
 ```
+
 You can also address any JMS Extender instance by specifying proper values for `--server` and `--connector` parameters.
 
 ## See Also
