@@ -4,7 +4,7 @@
 
 This project contains a sample Java console application that shows how the [_Lightstreamer JMS Extender Java Client Library_](https://github.com/Lightstreamer/JMSExtender-lib-client-java) can be used to connect to Lightstreamer JMS Extender.
 
-![Screenshot](screen_large.png)
+![Screenshot](screen-large.png)
 
 ## Details
 
