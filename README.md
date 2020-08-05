@@ -1,7 +1,5 @@
 # Lightstreamer JMS Extender - Basic Stock-List Demo - Java SE Client
 
-<!-- START DESCRIPTION lightstreamer-jms-example-stocklist-client-java -->
-
 This project contains a sample Java console application that shows how the [_Lightstreamer JMS Extender Java Client Library_](https://github.com/Lightstreamer/JMSExtender-lib-client-java) can be used to connect to Lightstreamer JMS Extender.
 
 ![Screenshot](screen-large.png)
@@ -42,10 +40,8 @@ You can also address any JMS Extender instance by specifying proper values for `
 
 ### Lightstreamer JMS Extender Service Needed by This Demo Client
 
-<!-- START RELATED_ENTRIES -->
 * [Lightstreamer JMS Extender - Stock-List Demo - Java (JMS) Service](https://github.com/Lightstreamer/Lightstreamer-JMS-example-StockList-service-java)
 
-<!-- END RELATED_ENTRIES -->
 ### Related Projects
 
 * [Lightstreamer JMS Extender - Basic Stock-List Demo - Android Client](https://github.com/Lightstreamer/Lightstreamer-JMS-example-StockList-client-android)
