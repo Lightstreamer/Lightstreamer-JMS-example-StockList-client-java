@@ -1,16 +1,20 @@
 package com.lightstreamer.jms.demo.stocklist_client;
 
-import com.beust.jcommander.JCommander;
-import com.beust.jcommander.Parameter;
-import com.lightstreamer.jms.LSConnectionFactory;
-import com.lightstreamer.jms.LSSession;
-import com.lightstreamer.jms.demo.stocklist_service.message.FeedMessage;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.MessageConsumer;
 import javax.jms.ObjectMessage;
 import javax.jms.Session;
 import javax.jms.Topic;
+
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+import com.lightstreamer.jms.LSConnectionFactory;
+import com.lightstreamer.jms.LSSession;
+import com.lightstreamer.jms.demo.stocklist_service.message.FeedMessage;
 
 public class App {
 
@@ -22,31 +26,19 @@ public class App {
 
   private static final String FORMAT = "%-6s %-19s %-6s %5s %6s %5s %5s %5s %5s %5s%n";
 
-  @Parameter(
-      names = {"-s", "--server"},
-      description = "JMS Extender end-point")
+  @Parameter(names = {"-s", "--server"}, description = "JMS Extender end-point")
   private String server = DEFAULT_SERVER;
 
-  @Parameter(
-      names = {"-c", "--connector"},
-      description = "JMS connector name")
+  @Parameter(names = {"-c", "--connector"}, description = "JMS connector name")
   private String connector = DEFAULT_CONNECTOR;
 
-  @Parameter(
-      names = {"-u", "--user"},
-      description = "User name")
+  @Parameter(names = {"-u", "--user"}, description = "User name")
   private String user;
 
-  @Parameter(
-      names = {"-p", "--password"},
-      description = "Password",
-      password = true)
+  @Parameter(names = {"-p", "--password"}, description = "Password", password = true)
   private String password;
 
-  @Parameter(
-      names = {"-?", "-h", "--help"},
-      description = "Show usage",
-      help = true)
+  @Parameter(names = {"-?", "-h", "--help"}, description = "Show usage", help = true)
   private boolean usage;
 
   /////////////////////////////////////////////////////////////////////////
@@ -74,43 +66,27 @@ public class App {
       System.out.println("Subscribed, waiting for data...");
       System.out.println();
 
-      System.out.printf(
-          FORMAT,
-          "Item",
-          "Stock name",
-          "Time",
-          "Last",
-          "Change",
-          "Open",
-          "Min",
-          "Max",
-          "Bid",
-          "Ask");
+      System.out.printf(FORMAT, "Item", "Stock name", "Time", "Last", "Change", "Open", "Min",
+          "Max", "Bid", "Ask");
 
-      consumer.setMessageListener(
-          message -> {
-            try {
-              // Cast to application message
-              ObjectMessage objMessage = (ObjectMessage) message;
-              FeedMessage feedMessage = (FeedMessage) objMessage.getObject();
+      consumer.setMessageListener(message -> {
+        try {
+          // Cast to application message
+          ObjectMessage objMessage = (ObjectMessage) message;
+          FeedMessage feedMessage = (FeedMessage) objMessage.getObject();
 
-              System.out.printf(
-                  FORMAT,
-                  feedMessage.itemName,
-                  feedMessage.currentValues.get("stock_name"),
-                  feedMessage.currentValues.get("time"),
-                  feedMessage.currentValues.get("last_price"),
-                  feedMessage.currentValues.get("pct_change"),
-                  feedMessage.currentValues.get("open_price"),
-                  feedMessage.currentValues.get("min"),
-                  feedMessage.currentValues.get("max"),
-                  feedMessage.currentValues.get("bid"),
-                  feedMessage.currentValues.get("ask"));
+          System.out.printf(FORMAT, feedMessage.itemName,
+              feedMessage.currentValues.get("stock_name"), feedMessage.currentValues.get("time"),
+              feedMessage.currentValues.get("last_price"),
+              feedMessage.currentValues.get("pct_change"),
+              feedMessage.currentValues.get("open_price"), feedMessage.currentValues.get("min"),
+              feedMessage.currentValues.get("max"), feedMessage.currentValues.get("bid"),
+              feedMessage.currentValues.get("ask"));
 
-            } catch (Exception e) {
-              e.printStackTrace();
-            }
-          });
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      });
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -122,7 +98,9 @@ public class App {
   public static void main(String[] args) {
     App stocklist = new App();
 
-    JCommander commander = JCommander.newBuilder().addObject(stocklist).build();
+    JCommander commander = JCommander.newBuilder()
+      .addObject(stocklist)
+      .build();
 
     commander.parse(args);
 
@@ -133,4 +111,5 @@ public class App {
 
     stocklist.run();
   }
+
 }
